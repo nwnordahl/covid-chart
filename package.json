@@ -1,0 +1,19 @@
+{
+  "name": "covid-chart",
+  "version": "1.0.0",
+  "description": "Visualizing covid-19 stats",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "chart.js": "^3.2.0"
+  }
+}
