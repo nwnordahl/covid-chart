@@ -1,0 +1,33 @@
+# Compatible with REST Client VSCode Extension: https://github.com/Huachao/vscode-restclient
+
+# List all the current routes available with detail on each
+GET https://api.covid19api.com/ HTTP/1.1
+
+###
+
+# Returns all countries and associated provinces.
+# The country_slug variable is used for country specific data
+GET https://api.covid19api.com/countries HTTP/1.1
+
+###
+
+# Returns all cases by case type for a country from the first recorded case.
+GET https://api.covid19api.com/dayone/country/norway HTTP/1.1
+
+###
+
+# Returns all cases by case type for a country.
+GET https://api.covid19api.com/total/country/norway HTTP/1.1
+
+###
+
+# Returns all live cases by case type for a country.
+# These records are pulled every 10 minutes and are ungrouped.
+GET https://api.covid19api.com/live/country/norway HTTP/1.1
+
+###
+
+# A summary of new and total cases per country
+GET https://api.covid19api.com/summary HTTP/1.1
+
+###
