@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="images/Screenshot%20from%202021-04-26%2015-32-50.png">
+</p>
+
 # Covid chart
 
 Visualizing Covid-19 stats with vanilla [JavaScript](https://www.javascript.com/) and [Chart.js](https://www.chartjs.org/).
