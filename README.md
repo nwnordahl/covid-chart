@@ -1,10 +1,10 @@
-<p align="center">
+<p>
+    <h1>Covid Chart</h1>
+    <p>
+    Visualizing Covid-19 stats with vanilla <a href="https://www.javascript.com/">JavaScript</a> and <a href="https://www.chartjs.org/">Chart.js</a>. The final site is hosted <a href="https://unruffled-goldstine-74b539.netlify.app/">here</a>.
+    </p></br>
     <img src="images/Screenshot%20from%202021-04-26%2015-32-50.png">
 </p>
-
-# Covid chart
-
-Visualizing Covid-19 stats with vanilla [JavaScript](https://www.javascript.com/) and [Chart.js](https://www.chartjs.org/).
 
 # Requirements
 
