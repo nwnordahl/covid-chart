@@ -1,49 +1,63 @@
 import "./index.css";
 import Chart from "chart.js/auto";
+import moment from "moment";
 
+// Query selectors
 const body = document.querySelector("body");
 const themeButton = document.querySelector("#change-theme");
+const countryForm = document.querySelector("#country-form");
 
+// Chart setup
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
 
+// Event listeners
 themeButton.addEventListener("click", () => {
   body.classList.toggle("dark-theme");
 });
 
+countryForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+});
+
+countryForm.addEventListener("input", () => {});
+
+// Arrays
+const label = [];
+const deaths = [];
+const countries = [];
+
+// Fetch Covid-19 data
+fetch("https://api.covid19api.com/")
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+
+fetch("https://api.covid19api.com/")
+  .then((response) => response.json())
+  .then((data) => data.forEach((element) => countries.push(element)))
+  .catch((error) => console.log(error));
+
+fetch("https://api.covid19api.com/dayone/country/norway")
+  .then((response) => response.json())
+  .then((data) =>
+    data.forEach((element) => {
+      deaths.push(element.Deaths);
+      label.push(element.Date.split("T")[0]);
+    })
+  )
+  .catch((error) => console.log(error));
+
+// Draw chart
 let chartInstance = new Chart(context, {
   type: "bar",
   data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: label,
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
+        label: "Deaths",
+        data: deaths,
       },
     ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
   },
 });

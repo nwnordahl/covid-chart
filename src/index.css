@@ -1,14 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 
+:root {
+  --light-gray: #dadce0;
+  --dark-blue: #2f51b5;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: #fff;
+  background-color: var(--light-gray);
   color: #333;
   font-family: "Lato", sans-serif;
+}
+
+.dark-theme {
+  background-color: #333;
+  color: #fff;
 }
 
 .logo {
@@ -27,12 +37,14 @@ body {
 
 .theme-btn {
   font-size: 1.1rem;
-  background-color: purple;
+  font-weight: 700;
+  background-color: #000;
   color: #fff;
   padding: 10px 15px;
   border-radius: 5px;
   border: 0;
   margin: 10px;
+  margin-right: 30px;
 }
 
 .theme-btn:hover {
@@ -47,12 +59,56 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
-  background-color: purple;
+  padding: 8px 0;
+  background-color: var(--dark-blue);
   margin-bottom: 50px;
 }
 
-.dark-theme {
-  background-color: #333;
+.navbar .dark-theme {
+  background-color: purple;
+  color: #000;
+}
+
+.fa-github {
   color: #fff;
+}
+
+.github-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.github-icon:hover {
+  transform: scale(0.97);
+}
+
+.misc {
+  display: flex;
+  margin-right: 30px;
+}
+
+#country-form {
+  display: flex;
+}
+
+.country-input {
+  padding: 10px 150px;
+  margin: 4px 0;
+  border-radius: 2px;
+  border: 1px solid var(--light-gray);
+}
+
+.country-input::-webkit-input-placeholder {
+  font-size: 1.15rem;
+}
+
+.country-input::-webkit-input-value {
+  font-size: 1.15rem;
+}
+
+.country-input:focus {
+  outline: none;
 }

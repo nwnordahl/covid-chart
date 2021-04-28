@@ -15,9 +15,27 @@
   <body>
     <div class="navbar">
       <h1 class="logo"><a href="index.html">Covid-19 Stats</a></h1>
-      <button id="change-theme" class="theme-btn">Change Theme</button>
+
+      <form id="country-form">
+        <input
+          type="search"
+          placeholder="Search countries..."
+          class="country-input"
+        />
+      </form>
+
+      <div class="misc">
+        <button id="change-theme" class="theme-btn">Change Theme</button>
+        <a
+          href="https://github.com/nwnordahl/covid-chart"
+          target="_blank"
+          class="github-icon"
+          ><i class="fab fa-github fa-3x"></i>
+          <h4>GitHub</h4></a
+        >
+      </div>
     </div>
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <canvas id="canvas" width="100%"></canvas>
 
     <script src="./index.js"></script>
   </body>
